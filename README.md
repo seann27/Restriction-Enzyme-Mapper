@@ -27,10 +27,15 @@ The Entrez module is used to grab FASTA and GenBank files, as well as the GI num
 Other Modules:
 
 sys
+
 re
+
 mysql.connector
+
 jinja2
+
 cgi
+
 cgitb
 
 Version: Python3
@@ -59,8 +64,11 @@ The user needs to use the same SNP notation (Nucleotide codes) as addgene if the
 multiple residues.
 
 K	(Keto) - G or T
+
 M	(Amino) - A or C
-R	(Purine) -A or G
+
+R	(Purine) - A or G
+
 Y	(Pyrimidine) - C or T
 
 One sequence per line is a requirement. Once the file has been formatted, the script utilities/cleanup.py must be ran with
