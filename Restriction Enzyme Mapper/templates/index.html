@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		
+		tr:nth-child(even){
+			background-color: #DCDCDC;
+		}
+
+		th {
+			background-color: #0000CD;
+			color: white;
+		}
+		
+		h2 {
+			font-weight: bold;
+			font-style: italic;
+			font-size: 20px;
+		}
+
+		div {
+			font-size: 12px
+		}
+
+		span {
+			font-weight: bold;
+			font-style: italic;
+		}
+		
+	</style>
+	<form name='upload_organism' action = "http://bfx.eng.jhu.edu/sblack22/final/final.cgi" method = "post">
+		<body>
+			<!-- Display Header -->
+			<h1>Restriction Enzyme Mapper</h1>
+			<div>
+				Author: Sean Black<br>
+				Database: sblack22
+			</div>
+			<br>
+			<span style="color: #FF0000;">{{errorMsg}}</span>
+			<span>{{msg}}</span>
+			<br><br>
+			<label for="prompt">Please upload a plasmid accession number: </label>
+			<input id="acc type="text" name="acc" autofocus="autofocus">
+			<input id="upload" type="submit" name="upload" value="upload">
+		</body>
+		<br><br>
+		<table cellspacing="2" cellpadding="2">
+			<tr>
+				<th></th>				
+				<th>GI</th>
+				<th>Accession</th>
+				<th>Name/Description</th>
+				<th>Total Size (bp)</th>
+				<th>Number of Genes</th>				
+			</tr>
+			{% for organism in organisms %}
+			<tr>				
+				<td><input type="radio" name="accession" value={{organism.gi}}></td>				
+				<td>{{ organism.gi }}</td>
+				<td>{{ organism.accession }}</td>
+				<td>{{ organism.name }}</td>	
+				<td>{{ organism.size }}</td>
+				<td>{{ organism.num_genes }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		<br>
+		<input id="analyze" type="submit" name="analyze" value="ANALYZE AND SHOW SITE TABLE">
+		<input id="genes" type="submit" name="genes" value="SHOW GENE TABLE">
+	</form>
+</html>

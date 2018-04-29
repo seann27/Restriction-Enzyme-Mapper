@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		
+		tr:nth-child(even){
+			background-color: #DCDCDC;
+		}
+
+		th {
+			background-color: #0000CD;
+			color: white;
+		}
+		
+		h2 {
+			font-weight: bold;
+			font-style: italic;
+			font-size: 20px;
+		}
+
+		div {
+			font-size: 12px
+		}
+		
+	</style>
+	<form name='upload_organism' action = "http://bfx.eng.jhu.edu/sblack22/final/final.cgi" method = "post">
+		<body>
+			<!-- Display Header -->
+			<h1>Restriction Enzyme Mapper</h1>
+			<div>
+				Author: Sean Black<br>
+				Database: sblack22
+			</div>
+			<br>
+			<label for="prompt">Please upload a plasmid accession number: </label>
+			<input id="accession" type="text" name="acc" autofocus="autofocus">
+			<input id="upload" type="submit" name="upload" value="upload">
+		</body>
+		<br><br>
+		<label>Optimal Sites (enzymes which only have compatible sites): {{lengthOpt}}</label>
+		<br><br>
+		<table cellspacing="2" cellpadding="2">
+			<tr>
+				<th>Name of Enzyme</th>
+				<th>Restriction Sequence</th>
+				<th>Digestion 5' location</th>
+				<th>Digestion 3' location</th>
+				<th>3' Gene</th>
+				<th>5' Gene</th>			
+			</tr>
+			{% for optSite in optSites %}
+			<tr>				
+				<td>{{ optSite.enzname }}</td>
+				<td>{{ optSite.enz }}</td>	
+				<td>{{ optSite.estart }}</td>
+				<td>{{ optSite.estop }}</td>
+				<td>{{ optSite.gene3 }}</td>
+				<td>{{ optSite.gene5 }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		<br><br>
+		<label>All other compatible digestion sites: {{lengthCom}}</label>
+		<br><br>
+		<table cellspacing="2" cellpadding="2">
+			<tr>
+				<th>Name of Enzyme</th>
+				<th>Restriction Sequence</th>
+				<th>Digestion 5' location</th>
+				<th>Digestion 3' location</th>
+				<th>5' Gene</th>
+				<th>3' Gene</th>			
+			</tr>
+			{% for comSite in comSites %}
+			<tr>				
+				<td>{{ comSite.enzname }}</td>
+				<td>{{ comSite.enz }}</td>	
+				<td>{{ comSite.estart }}</td>
+				<td>{{ comSite.estop }}</td>
+				<td>{{ comSite.gene3 }}</td>
+				<td>{{ comSite.gene5 }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</form>
+	
+</html>

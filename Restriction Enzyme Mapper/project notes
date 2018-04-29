@@ -1,0 +1,16 @@
+NOTES
+- tried parsing line by line using a custom wrapper function, however it was slower than just reading the contents of an entire file
+- used a script to clean up copy and pasted enzyme data (cleanup.py) and another script to add it to the database (uploadEnzymes.py)
+- Tried parsing all found sites within query (~20k) against all genes (909). It was very slow and took 15 minutes to run on my machine. Going to try a different approach which instead iterates over the genes and queries the sites for compatibility
+- Runs as slow as the other method (maybe slightly faster). There are a lot of compatible sites, however these same enzymes digest elsewhere in the plasmid, need a filter of some sort.
+- could try iterating over enzyme database, selecting all instances in final_sites where the enzyme occurs. The loop for each enzyme can break if the site location lands in the middle of a gene
+
+TO DO:
+- convert genbank and fasta scripts to modules, import into one scrip. need to error check the accession number, then once that is error checked run modules
+- create HTML and CSS backbone
+	- can links be used for each organism?
+	- will the angular plasmid JS script work or should it stick to tabular format?
+
+IMPROVEMENTS:
+- look into using the genbank file for fasta input instead of a fasta file
+	- create a large string of sequences, change the case to uppercase, and then call a function using that string input

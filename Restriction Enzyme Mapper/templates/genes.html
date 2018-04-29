@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		
+		tr:nth-child(even){
+			background-color: #DCDCDC;
+		}
+
+		th {
+			background-color: #0000CD;
+			color: white;
+		}
+		
+		h2 {
+			font-weight: bold;
+			font-style: italic;
+			font-size: 20px;
+		}
+
+		div {
+			font-size: 12px
+		}
+		
+	</style>
+	<form name='upload_organism' action = "http://bfx.eng.jhu.edu/sblack22/final/final.cgi" method = "post">
+		<body>
+			<!-- Display Header -->
+			<h1>Restriction Enzyme Mapper</h1>
+			<div>
+				Author: Sean Black<br>
+				Database: sblack22
+			</div>
+			<br>
+			<label for="prompt">Please upload a plasmid accession number: </label>
+			<input id="accession" type="text" name="acc" autofocus="autofocus">
+			<input id="upload" type="submit" name="upload" value="upload">
+		</body>
+		<br><br>
+		<label>{{numGenes}} genes found. </label>
+		<br><br>
+		<table cellspacing="2" cellpadding="2">
+			<tr>
+				<th>Organism GI</th>
+				<th>Gene Key</th>
+				<th>Description/Function</th>
+				<th>Protein ID (if any)</th>
+				<th>Strand</th>
+				<th>Start location</th>
+				<th>Stop location</th>			
+			</tr>
+			{% for gene in genes %}
+			<tr>				
+				<td>{{ gene.org_acc }}</td>
+				<td>{{ gene.geneNum }}</td>
+				<td style="text-align:center">{{ gene.product }}</td>
+				<td>{{ gene.protein_id}}</td>	
+				<td>{{ gene.strand }}</td>
+				<td>{{ gene.gstart }}</td>
+				<td>{{ gene.gstop }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</form>
+	
+</html>
