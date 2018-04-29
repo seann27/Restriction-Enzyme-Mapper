@@ -19,11 +19,13 @@ optimal sites of digestion and the enzymes involved in the digestion process.
 REQUIREMENTS
 
 Uses the Entrez module from the Biopython library
+
 http://biopython.org/DIST/docs/api/Bio.Entrez-module.html
 
 The Entrez module is used to grab FASTA and GenBank files, as well as the GI number from a user entered accession number
 
 Other Modules:
+
 sys
 re
 mysql.connector
@@ -32,6 +34,7 @@ cgi
 cgitb
 
 Version: Python3
+
 Database: MySQL
 
 The database has been optimized to run ~40 restriction sites against plasmids of size 2.5 million base pairs. A gateway timeout
@@ -48,7 +51,8 @@ The database currently has 39 enzymes stored in the database. If the user wants 
 
 The user must format a text file with the name of the enzyme, followed by a tab, followed by a sequence. An example is:
 
-"EcoRI *	G AATTC" 
+"EcoRI *	G AATTC"
+
 (taken from addgene)
 
 The user needs to use the same SNP notation (Nucleotide codes) as addgene if they wish to specify nucleotides which can be
