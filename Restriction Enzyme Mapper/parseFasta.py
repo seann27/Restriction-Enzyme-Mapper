@@ -10,7 +10,7 @@ def run(accNum,gi):
 	Entrez.email = "sblack22@jhu.edu"
 	
 	# store restriction enzymes in dict #
-	f = open('newenzymes.txt','r')
+	f = open('utilities/newenzymes.txt','r')
 	
 	b = {}
 	
