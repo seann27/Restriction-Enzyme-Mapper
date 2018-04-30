@@ -9,7 +9,7 @@ https://github.com/seann27/AS410712_FinalProject/tree/master/Restriction%20Enzym
 
 A demo of the web application can be currently accessed by going to:
 
-bfx.eng.jhu.edu/sblack22/final/index.cgi
+bfx.eng.jhu.edu/sblack22/Restriction_Enzyme_Mapper/index.cgi
 
 This web application takes an accession number input by the user and maps all sites of digestion from the restriction
 sites stored in the database assuming the user has queried a plasmid. The application has the ability to show a table
