@@ -1,8 +1,6 @@
 #!/usr/local/bin/python3
 
 import re
-import popDB
-import analyzeResults3
 import returnInfo
 import jinja2
 import cgi, cgitb

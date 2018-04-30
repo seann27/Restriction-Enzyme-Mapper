@@ -45,17 +45,19 @@ def analyze(gi):
 	products = []
 	startList = []
 	stopList = []
+	strandList = []
 	gstop = 0
 
 	# parse introns (regions between coding sequences) for digestion sites #
 	for (org_acc,geneNum,product,protein_id,strand,gstart,gstop) in all_results:
 		geneProduct = product.decode('utf-8')
 		products.append(geneProduct)
+		strandList.append(strand)
 		startList.append(gstart)
 		stopList.append(gstop)
 		if temp > 0:
-			gene3 = products[temp-1]+" - ["+str(startList[temp-1])+":"+str(stopList[temp-1])+"]"
-			gene5 = products[temp]+" - ["+str(startList[temp])+":"+str(stopList[temp])+"]"
+			gene3 = products[temp-1]+" - ["+str(startList[temp-1])+":"+str(stopList[temp-1])+"] --> strand ("+str(strandList[temp-1])+")"
+			gene5 = products[temp]+" - ["+str(startList[temp])+":"+str(stopList[temp])+"] --> strand ("+str(strandList[temp])+")"
 
 		if idx == 1:
 			currentstop = gstop

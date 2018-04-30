@@ -24,9 +24,6 @@ for (gi,accession,name,size,num_genes) in orgs:
 
 	qry = "delete from final_organism where gi = %s"
 	curs.execute(qry,(accNum,))
-
-	qry = "delete from final_compatibleEnzymes where org = %s"
-	curs.execute(qry,(accNum,))
 	
 	tables.append(accNum)
 

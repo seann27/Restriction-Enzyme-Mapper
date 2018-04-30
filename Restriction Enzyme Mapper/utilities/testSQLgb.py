@@ -72,7 +72,7 @@ for line in contents:
 			strand = -1
 		print("start: "+str(m.group(2))+", stop: "+str(m.group(num_match)))
 		gb.append(gene_obj(m.group(2),m.group(num_match),"","",strand))
-	elif re.match(r"(\s+)(.)(product=)(.+)",line):
+	elif re.match(r"(\s+)(.)(product=)(.+)",line) and number_CDS > 0:
 		prod = re.match(r"(\s+)(.)(product=)(.+)",line)
 		product = str(prod.group(4))
 		product = product.strip('\"')

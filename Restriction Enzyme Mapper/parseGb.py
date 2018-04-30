@@ -68,7 +68,7 @@ def run(accNum):
 				strand = -1
 
 			gb.append(gene_obj(m.group(2),m.group(num_match),"no product description","",strand))
-		elif re.match(r"(\s+)(.)(product=)(.+)",line):
+		elif re.match(r"(\s+)(.)(product=)(.+)",line) and number_CDS > 0:
 			prod = re.match(r"(\s+)(.)(product=)(.+)",line)
 			product = str(prod.group(4))
 			product = product.strip('\"')
