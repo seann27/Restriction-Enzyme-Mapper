@@ -46,6 +46,14 @@ The database has been optimized to run ~40 restriction sites against plasmids of
 error might occur if the user increases the amount of enzymes or the plasmid size or the loading time takes more than the 
 default 60 seconds before this error is thrown.
 
+INSTRUCTIONS - USING THE APPLICATION
+
+The user will need to input a plasmid accession number in the text field next to the upload button. This will add the organism to the
+list of organisms currently in the database. This list will be displayed on the index.html page. Each organism entry will have a radio
+button next to it. If the user wishes to view the table of annotated genes, or perform an analysis and view a table of compatible
+restriction sites (sites which do not interfere with coding regions), the user has the ability to select either or. The user will be
+able to upload an accession number on any page during the application. If an invalid accession number is entered, the application will not upload the accession and will notify the user that their input is invalid.
+
 INSTRUCTIONS - GENERATING ENZYMES IN DB
 
 A key component to this web application utilizes a list of restriction enzymes stored in the database. The current database
@@ -81,14 +89,6 @@ This will generate a file, newenzymes.txt, with all the formatted enzymes (and g
 ./utilities/uploadEnzymes.py
 
 Which will upload the enzymes to the database.
-
-INSTRUCTIONS - USING THE APPLICATION
-
-The user will need to input a plasmid accession number in the text field next to the upload button. This will add the organism to the
-list of organisms currently in the database. This list will be displayed on the index.html page. Each organism entry will have a radio
-button next to it. If the user wishes to view the table of annotated genes, or perform an analysis and view a table of compatible
-restriction sites (sites which do not interfere with coding regions), the user has the ability to select either or. The user will be
-able to upload an accession number on any page during the application. If an invalid accession number is entered, the application will not upload the accession and will notify the user that their input is invalid.
 
 INSTRUCTIONS - RESETTING THE DATABASE
 
