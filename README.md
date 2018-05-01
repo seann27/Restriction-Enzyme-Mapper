@@ -48,7 +48,7 @@ default 60 seconds before this error is thrown.
 
 INSTRUCTIONS - USING THE APPLICATION
 
-The user will need to input a plasmid accession number in the text field next to the upload button. This will add the organism to the
+The user will need to input a valid plasmid accession number in the text field next to the upload button. Valid accession numbers refer to organisms which have FASTA and GenBank entries in NCBI's nucleotide database. This will add the organism to the
 list of organisms currently in the database. This list will be displayed on the index.html page. Each organism entry will have a radio
 button next to it. If the user wishes to view the table of annotated genes, or perform an analysis and view a table of compatible
 restriction sites (sites which do not interfere with coding regions), the user has the ability to select either or. The user will be
