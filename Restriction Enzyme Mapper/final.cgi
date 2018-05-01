@@ -83,7 +83,7 @@ elif "analyze" in form:
 	template = env.get_template('siteTable.html')
 
 	# load siteTable html page #
-	print(template.render(comSites=comSites,optSites=optSites,lengthCom=lengthCom,lengthOpt=lengthOpt))
+	print(template.render(comSites=comSites,optSites=optSites,lengthCom=lengthCom,lengthOpt=lengthOpt,gi=gi))
 
 # if user wants to display gene information #
 else:
