@@ -1,11 +1,10 @@
-# AS410712_FinalProject
-Final Project for Advanced Practical Computing Concepts
+# Restriction Enzyme Mapper
 
 ABOUT
 
 This program is called the Restriction Enzyme Mapper. Full source code can be found here:
 
-https://github.com/seann27/AS410712_FinalProject/tree/master/Restriction%20Enzyme%20Mapper
+https://github.com/seann27/Restriction-Enzyme-Mapper
 
 A demo of the web application can be currently accessed by going to:
 
